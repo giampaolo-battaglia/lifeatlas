@@ -176,40 +176,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Google Fonts**: For beautiful typography
 - **The community**: For inspiration and feedback
 
-## 🌟 Roadmap
-
-### Version 1.1 (Coming Soon)
-- [ ] Photo upload and display
-- [ ] Memory tags and categories
-- [ ] Export/import functionality
-- [ ] Multiple map themes
-
-### Version 1.2 (Future)
-- [ ] Memory statistics and insights
-- [ ] Search functionality
-- [ ] Memory sharing features
-- [ ] Offline mode support
-
-### Version 2.0 (Vision)
-- [ ] Fantasy map support
-- [ ] Collaborative memory maps
-- [ ] Timeline view
-- [ ] Advanced analytics
-
-## 📞 Support
-
-### Getting Help
-- **Issues**: Report bugs or request features on GitHub Issues
-- **Documentation**: Check the `docs/` folder for detailed guides
-- **Community**: Join discussions in GitHub Discussions
-
-### Troubleshooting
-- **Data not saving**: Check if localStorage is enabled in browser
-- **Map not loading**: Verify internet connection and try refreshing
-- **Mobile issues**: Ensure you're using a supported browser version
-
----
-
 **Made with ❤️ for memory keepers and life explorers**
 
 *Start mapping your memories today and discover the stories your locations tell.*
