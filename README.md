@@ -1,8 +1,9 @@
-# 🧭 Life Atlas
+# 🧭 Life Atlas Concept in progress
 
 > *Map your memories. Explore yourself.*
 
-Life Atlas is a personal digital memory map that transforms the way you organize and explore your life experiences. Instead of traditional chronological journaling, Life Atlas lets you pin memories to real-world locations, creating an interactive map of your personal journey.
+Life Atlas initial concept - a personal digital memory map that transforms the way you organize and explore your life experiences. Instead of traditional chronological journaling, Life Atlas lets you pin memories to real-world locations, creating an interactive map of your personal journey.
+Be kind, work in progress!
 
 ## ✨ Features
 
