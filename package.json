@@ -1,0 +1,50 @@
+{
+  "name": "life-atlas",
+  "version": "1.0.0",
+  "description": "A personal digital memory map. Map your memories, explore yourself.",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "start:node": "npx http-server -p 8000",
+    "build": "echo 'No build process needed for static site'",
+    "test": "echo 'No tests configured yet'",
+    "lint": "echo 'Linting not configured yet'",
+    "deploy": "gh-pages -d ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/life-atlas.git"
+  },
+  "keywords": [
+    "memory",
+    "journal",
+    "map",
+    "personal",
+    "memories",
+    "life",
+    "atlas",
+    "mapping",
+    "diary",
+    "location-based",
+    "storytelling",
+    "interactive"
+  ],
+  "author": "Your Startup",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yourusername/life-atlas/issues"
+  },
+  "homepage": "https://yourusername.github.io/life-atlas",
+  "devDependencies": {
+    "gh-pages": "^4.0.0",
+    "http-server": "^14.1.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
