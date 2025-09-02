@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Atlas - Map Your Memories</title>
+    <meta name="description" content="Life Atlas - A personal digital memory map. Map your memories, explore yourself.">
+    <meta name="keywords" content="memory, journal, map, personal, memories, life, atlas">
+    <meta name="author" content="Your Startup">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Life Atlas - Map Your Memories">
+    <meta property="og:description" content="A personal digital memory map. Turn your memories into an interactive journey.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourusername.github.io/life-atlas">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Life Atlas - Map Your Memories">
+    <meta name="twitter:description" content="A personal digital memory map. Turn your memories into an interactive journey.">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧭</text></svg>">
+    
+    <!-- External Dependencies -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>🧭 Life Atlas</h1>
+        <span class="tagline">Map your memories. Explore yourself.</span>
+        <div class="controls">
+            <button class="btn" onclick="toggleFilters()">🔍 Explore</button>
+            <button class="btn" onclick="randomMemory()">🎲 Random</button>
+        </div>
+    </div>
+
+    <div id="map"></div>
+
+    <button class="floating-action" onclick="addMemoryMode()" title="Add Memory">📍</button>
+
+    <div class="filters" id="filters" style="display: none;">
+        <h3>🗺️ Explore Memories</h3>
+        <div class="filter-group">
+            <label for="moodFilter">Filter by Mood:</label>
+            <select id="moodFilter" onchange="applyFilters()">
+                <option value="">All Moods</option>
+                <option value="😊">😊 Happy</option>
+                <option value="😢">😢 Sad</option>
+                <option value="❤️">❤️ Love</option>
+                <option value="🌟">🌟 Excited</option>
+                <option value="🤔">🤔 Thoughtful</option>
+                <option value="😌">😌 Peaceful</option>
+                <option value="🔥">🔥 Passionate</option>
+                <option value="🌙">🌙 Dreamy</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <label for="dateFromFilter">From Date:</label>
+            <input type="date" id="dateFromFilter" onchange="applyFilters()">
+        </div>
+        <div class="filter-group">
+            <label for="dateToFilter">To Date:</label>
+            <input type="date" id="dateToFilter" onchange="applyFilters()">
+        </div>
+        <button class="btn" onclick="clearFilters()">Clear All</button>
+    </div>
+
+    <!-- Memory Creation Modal -->
+    <div id="memoryModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>📝 Create Memory</h2>
+            <form id="memoryForm">
+                <div class="form-group">
+                    <label for="memoryTitle">Title:</label>
+                    <input type="text" id="memoryTitle" required placeholder="Give your memory a name...">
+                </div>
+                
+                <div class="form-group">
+                    <label for="memoryDate">Date:</label>
+                    <input type="date" id="memoryDate" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="memoryDescription">Description:</label>
+                    <textarea id="memoryDescription" placeholder="Tell the story of this moment..." required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Mood:</label>
+                    <div class="mood-selector">
+                        <div class="mood-option" data-mood="😊">😊 Happy</div>
+                        <div class="mood-option" data-mood="😢">😢 Sad</div>
+                        <div class="mood-option" data-mood="❤️">❤️ Love</div>
+                        <div class="mood-option" data-mood="🌟">🌟 Excited</div>
+                        <div class="mood-option" data-mood="🤔">🤔 Thoughtful</div>
+                        <div class="mood-option" data-mood="😌">😌 Peaceful</div>
+                        <div class="mood-option" data-mood="🔥">🔥 Passionate</div>
+                        <div class="mood-option" data-mood="🌙">🌙 Dreamy</div>
+                    </div>
+                </div>
+                
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Cancel</button>
+                    <button type="submit" class="btn">Save Memory</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Memory Detail Modal -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeDetailModal()">&times;</span>
+            <div id="memoryDetailContent"></div>
+            <div class="modal-actions">
+                <button type="button" class="btn btn-secondary" onclick="editMemory()">Edit</button>
+                <button type="button" class="btn" style="background: linear-gradient(135deg, #dc3545, #c82333);" onclick="deleteMemory()">Delete</button>
+                <button type="button" class="btn" onclick="closeDetailModal()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Scripts -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Custom Scripts -->
+    <script src="js/app.js"></script>
+</body>
+</html>
